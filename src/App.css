@@ -39,3 +39,67 @@
   color: #fff;
   font-size: 100px;
 }
+
+.form-inner{
+  
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;  
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  border: solid;
+}
+
+.form-inner h1{
+  text-align: center;
+  color: #1261A0;
+}
+
+.form-inner h2{
+  text-align: center;
+  color: #500000;
+}
+
+form .form-inner{
+  display: block;
+  margin-bottom: 15px;
+}
+
+form .login-input {
+  padding: 8px 25px;
+  border-radius: 2px;
+  margin-left: 25px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  margin-bottom: 16px;
+  border: 1px solid #000;
+}
+
+form .login-label {
+  margin-left: 25px;
+}
+
+form .btn--outline {
+  margin-left: 45px;
+  padding: 10px 80px;
+  border-radius: 30vh;
+  margin-bottom: 16px;
+  background-color: #1261A0;
+  color:white;
+}
+
+form .btn--outline:hover {
+  transition: all 0.3s ease-out;
+  background: #0059A0;
+  color:white;
+  border-color: #0059A0;
+  transition: 250ms;
+}
+
+form .text-center{
+  position: relative;
+  text-align: center;
+  
+}
