@@ -1,0 +1,27 @@
+.list {  
+  width: 180px;
+  height: 180px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-inline: 80px;
+  display: inline-block;
+  border-radius: 5%;
+  text-align: center;
+}
+
+
+.social-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 27px;
+  width: 120px;
+}
+
+
+
+
+
+  
+   

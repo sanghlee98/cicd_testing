@@ -1,10 +1,10 @@
 .navbar {
-  background: #fff;
-  height: 100px;
+  background: #570E0E;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -19,7 +19,7 @@
 }
 
 .navbar-logo {
-  color: #000;
+  color: #fff;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -40,7 +40,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 65vw;
+  width: 60vw;
   justify-content: end;
   margin-right: 2rem;
 }
@@ -50,21 +50,21 @@
 }
 
 .nav-links {
-  color: #000;
+  color: #fff;
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0.1rem 1rem;
-  height: 100%;
+  padding: 0.5rem 1rem;
+  height: 110%;
 }
 
 .nav-links:hover {
-  border-bottom: 3px solid #56CCF2;
-  transition: all 0.1s ease-out;
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
 }
 
 .fa-bars {
-  color: #56CCF2;
+  color: #fff;
 }
 
 .nav-links-mobile {
@@ -109,7 +109,7 @@
 
   .nav-links:hover {
     background-color: #fff;
-    color: #242424;
+    color: #fff;
     border-radius: 0;
   }
 
@@ -131,7 +131,7 @@
   }
 
   .fa-times {
-    color: #fff;
+    color: #800000;
     font-size: 2rem;
   }
 
@@ -144,15 +144,15 @@
     text-decoration: none;
     font-size: 1.5rem;
     background-color: transparent;
-    color: #fff;
+    color: #800000;
     padding: 14px 20px;
-    border: 1px solid #fff;
+    border: 1px solid #800000;
     transition: all 0.3s ease-out;
   }
 
   .nav-links-mobile:hover {
-    background: #fff;
-    color: #242424;
+    background: #800000;
+    color: #800000;
     transition: 250ms;
   }
 }

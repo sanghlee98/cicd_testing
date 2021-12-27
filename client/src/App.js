@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Services from './components/pages/Services';
 import Products from './components/pages/Products';
 import SignUp from './components/pages/SignUp';
+import Officers from './components/pages/Officers';
 import SignUpForm from './components/pages/SignUpForm';
 import Form from './components/pages/Form';
 import Homepage from './components/pages/Homepage';
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' exact component={Home} />
           <Route path='/upcoming event' component={Services} />
           <Route path='/contact us' component={Products} />
+          <Route path='/officers' component={Officers} />
           <Route path='/sign-up' component={SignUp} setLoginUser={setLoginUser}> 
             {
               user && user._id ? <Homepage setLoginUser={setLoginUser}/> : <SignUp setLoginUser={setLoginUser}/>
