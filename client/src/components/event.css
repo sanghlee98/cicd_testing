@@ -1,0 +1,23 @@
+.background {
+    background-image: url('./../Images/TAMU_image.jpg');
+    padding: 150px;
+    text-align: center;
+    font-size: 35px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display:block;
+    background-size: 100% 100%;
+    object-fit: fill;
+    color: white
+  }
+  
+.btn-danger
+{
+    background-color: hsl(351, 68%, 11%) !important;
+    background-repeat: repeat-x;
+    background-image: -o-linear-gradient(top, #d12741, #2f080e);
+    background-image: linear-gradient(#d12741, #2f080e);
+    border-color: #2f080e #2f080e hsl(351, 68%, 1.5%);
+    color: #fff !important; 
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.62);
+}
