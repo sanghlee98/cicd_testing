@@ -5,7 +5,7 @@ const Homepage = ({setLoginUser}) => {
     const history = useHistory()
     return (
         <div className = "homepage">
-            <h1>Hello homepage</h1>
+            <h1>Hello homepage Where is this</h1>
             {/* <div className = "button" onClick={() => history.push('/')}>Logout</div>          */}
             <div className = "button" onClick={() => history.push('/')}>Back</div>         
         </div>

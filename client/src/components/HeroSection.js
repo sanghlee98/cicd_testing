@@ -6,10 +6,9 @@ import './HeroSection.css';
 function HeroSection() {
   return (
     <div className='hero-container'>
-      <video src='/videos/video-3.mp4' autoPlay loop muted />
-      <h1>Korean-American Scientists and Engineers</h1>
-      <h2>Texas A&M</h2>
-      
+      <video src='/videos/Zach.mp4' autoPlay loop muted />
+      <h1>Korean-American Scientists and Engineers Association</h1>
+      <p>Texas A&M University</p>
       
       <div className='hero-btns'>
         <Button
@@ -17,9 +16,8 @@ function HeroSection() {
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-          LEARN MORE
+          LOG IN
         </Button>
-       
       </div>
     </div>
   );
