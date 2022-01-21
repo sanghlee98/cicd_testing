@@ -24,8 +24,8 @@ const initialState = {email:'', password: ''};
 // };
 
 
-// export default function SignUp({setLoginUser}) {
-const SignUp = ({setLoginUser}) => {
+export default function SignUp({setLoginUser}) {
+// const SignUp = ({setLoginUser}) => {
   // const [formData, setFormData] = useState(initialState);
   // const [formData, setFormData] = useState(initialState);
 
@@ -62,13 +62,16 @@ const SignUp = ({setLoginUser}) => {
       if(res.data.message === "Login Successful. Welcome To KSEA"){
         alert(res.data.message)
         console.log(res.data.user)
-        setLoginUser(res.data.user)      
-        history.push("/Homepage")
+        setLoginUser(res.data.user)    
+        history.push("/sign-up")
       }
       else{
         console.log(res.data)        
         alert(res.data.message)
       }
+    })
+    .catch(err => {
+      console.log(err)
     })
     
   }
@@ -77,7 +80,7 @@ const SignUp = ({setLoginUser}) => {
     
     <div className = "form_container">
     <div className = "form_wrapper">
-      {console.log(values)}      
+      {/* {console.log(values)}       */}
       <div> 
       <h1 className = "form_title">Howdy!</h1>                
       <h2 className = "form_title">Welcome to KSEA TAMU Chapter</h2>                
@@ -121,4 +124,4 @@ const SignUp = ({setLoginUser}) => {
 </div>
  );
 }
-export default SignUp
+// export default SignUp

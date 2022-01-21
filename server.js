@@ -28,5 +28,4 @@ app.use(morgan('tiny'));
 
 app.use('/api', routes);
 
-
 app.listen(PORT, console.log(`server is starting at ${PORT}`));
