@@ -18,6 +18,24 @@ router.get('/', (req, res) => {
     
 })
 
+// Update User Information
+router.post('/update', (req, res) => {
+
+    console.log('Body: ' , req.body);
+
+    const {email, lastname} = req.body;
+    console.log(lastname);
+    KSEA_MODEL.findOne({email: email}, (err, user) => {
+        if(user){
+            user.updateOne({email: email}, {lastname: lastname}, {new:true});
+        }else{
+            res.send({message: "Please enter Valid ID and Password."})
+        }
+
+    })
+
+})
+
 router.post("/login", (req, res) => {
     
     const {email, password} = req.body
