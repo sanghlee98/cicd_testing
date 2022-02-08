@@ -12,13 +12,15 @@ const routes = require('./routes/api');
 
 mongoose.connect('mongodb://localhost/tamuksea', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    // useFindAndModify: true
+
 });
 
 mongoose.connection.on('connected', ()=>{
     console.log("Mongoose is connected!!");
 });
-
+// mongoose.set('useFindAndModify', true);
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 

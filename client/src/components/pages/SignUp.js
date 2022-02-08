@@ -10,33 +10,8 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from "axios"
 
 const initialState = {email:'', password: ''};
-// const [formData, setFormData] = useState(initialState);
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-
-//   console.log(initialState);
-// };
-
-// const handleChange = (e) => {
-
-//   setFormData({...FormData, [e.target.name]: e.target.value})
-// };
-
 
 export default function SignUp({setLoginUser}) {
-// const SignUp = ({setLoginUser}) => {
-  // const [formData, setFormData] = useState(initialState);
-  // const [formData, setFormData] = useState(initialState);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(initialState);
-  // };
-
-  // const handleChange = (e) => {
-  //   setFormData({...formData, [e.target.name]: e.target.value });
-  // };
 
   const history = useHistory();
 

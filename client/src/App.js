@@ -16,7 +16,7 @@ function App() {
 
   const [user, setLoginUser] = useState({})
 
-  console.log(user._id);
+  console.log(user);
   return (
       <Router>  
         {

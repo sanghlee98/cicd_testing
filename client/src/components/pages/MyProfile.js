@@ -3,15 +3,21 @@ import '../../App.css';
 import { Link } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import {useHistory } from 'react-router-dom';
 // import HeroSection from '../HeroSection';
 // import InfoSection from '../InfoSection';
 // import Footer from '../Footer';
 
 function MyProfile({user}) {
-  console.log(user)
+  
+  const history = useHistory();
+  
   const [values, setValues] = useState({
     lastname: user.lastname,
-    email: user.email
+    firstname: user.firstname,
+    password: user.password,
+    email: user.email,
+    major: user.major
     });
         
     const handleChange = (event) =>{
@@ -33,13 +39,14 @@ function MyProfile({user}) {
         // setErrors(validation(values));
         // setDataIsCorrect(true);        
         
-        const {email, lastname} = values        
+        const {email, lastname, firstname, password, major} = values        
         if(lastname){  
 
             axios.post("/api/update", values)
                 .then(res => {
-                    console.log(res.data)
-     
+                    //console.log(res.data)
+                    alert(res.data.message)
+                    history.push("/sign-up")
                 })          
         }        
         else{
@@ -75,6 +82,21 @@ function MyProfile({user}) {
             {/* {errors.lastname && <p className="error">{errors.lastname}</p>} */}
         </div>
   
+        <div className = "sign-up_name">
+            <label className ="sign_up_label">First Name</label>
+            <input className = "sign_up_input" type="text" name="firstname" value={values.firstname} onChange={handleChange} />
+            {/* {errors.lastname && <p className="error">{errors.lastname}</p>} */}
+        </div>
+        <div className = "sign-up_name">
+            <label className ="sign_up_label">Password</label>
+            <input className = "sign_up_input" type="password" name="password" value={values.password} onChange={handleChange} />
+            {/* {errors.lastname && <p className="error">{errors.lastname}</p>} */}
+        </div>
+        <div className = "sign-up_name">
+            <label className ="sign_up_label">Major</label>
+            <input className = "sign_up_input" type="text" name="major" value={values.major} onChange={handleChange} />
+            {/* {errors.lastname && <p className="error">{errors.lastname}</p>} */}
+        </div>
         <div>
             <button className ="submit" onClick={handleFormSubmit}>Sign up</button>                    
             {/* <button className ="submit">Submit</button> */}

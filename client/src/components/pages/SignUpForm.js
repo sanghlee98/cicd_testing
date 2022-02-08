@@ -39,30 +39,6 @@ const SignUpForm = ({ submitForm }) => {
         // console.log({values})
     };
     
-    // const submit = (event) => {
-    //     console.log("Submit ");
-    //     event.preventDefault();
-    //     const userInfo = {            
-    //         lastname: values.lastname,
-    //         firstname: values.firstname,
-    //         email: values.email,
-    //         password: values.password,
-    //         major: values.major
-    //     };
-
-    //     axios({
-    //         url: '/api/save',
-    //         method: 'POST',
-    //         data: userInfo
-    //     })
-    //         .then(() => {
-    //             console.log('Data has been sent to the server');
-    //         })
-    //         .catch(() => {
-    //             console.log('Internal server error');
-    //         });;
-    // };
-
     const handleFormSubmit = (event)=>{   
 
         console.log("handleFormSubmit ");     
