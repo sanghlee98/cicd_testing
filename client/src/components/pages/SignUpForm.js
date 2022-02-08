@@ -12,8 +12,8 @@ const initialState = {firstname:'', lastname: '', email: '', password: '', major
 
 const SignUpForm = ({ submitForm }) => {
 
-    const [formData, setFormData] = useState(initialState);
     const history = useHistory()
+
     const [values, setValues] = useState({
         lastname: "",
         firstname: "",
@@ -22,60 +22,32 @@ const SignUpForm = ({ submitForm }) => {
         major: "",
     });
 
-    const [errors, setErrors] = useState({
-
-    });
+    const [errors, setErrors] = useState({});
 
     const [dataIsCorrect, setDataIsCorrect] = useState(false);
-
-    // const handleChange = (event) =>{
-    //     setValues({
-    //         ...values,            
-    //         [event.target.name]: event.target.value            
-    //     })                
-    //     console.log({values})
-    // };
+    
     const handleChange = (event) =>{
+
+        // Set name & value using event target
         const {name, value} = event.target
+                
+        // Setting all values (Lastname, firstname...)
         setValues({
             ...values,            
             [name]: value            
         })                
-        console.log({values})
+        // console.log({values})
     };
-    const submit = (event) => {
-        event.preventDefault();
-        const payload = {            
-            lastname: values.lastname,
-            firstname: values.firstname,
-            email: values.email,
-            password: values.password,
-            major: values.major
-        };
+    
+    const handleFormSubmit = (event)=>{   
 
-        axios({
-            url: '/api/save',
-            method: 'POST',
-            data: payload
-        })
-            .then(() => {
-                console.log('Data has been sent to the server');
-            })
-            .catch(() => {
-                console.log('Internal server error');
-            });;
-    };
-
-
-
-    const handleFormSubmit = (event)=>{
+        console.log("handleFormSubmit ");     
         event.preventDefault();
         setErrors(validation(values));
-        setDataIsCorrect(true);
-        const {lastname,firstname, email, password, major} = values
-        if(lastname && firstname && email && password && major){            
-            //alert("registered successfully")
-            
+        // setDataIsCorrect(true);        
+        
+        const {lastname,firstname, email, password, major} = values        
+        if(lastname && firstname && email && password && major){                        
             axios.post("/api/save", values)
                 .then(res => {
                     console.log(res.data)
@@ -83,19 +55,17 @@ const SignUpForm = ({ submitForm }) => {
                     if (res.data.msg !== "User already registered"){
                         history.push('/sign-up')                
                     }
-                })
-        
-        }
-        
+                })        
+        }        
         else{
             alert("invalid input")
         }
     };
 
     useEffect(() =>{
-        if (Object.keys(errors).length === 0 && dataIsCorrect){
-            // submitForm(true);
-        }
+        // if (Object.keys(errors).length === 0 && dataIsCorrect){
+        //     // submitForm(true);
+        // }
 
     }, [errors]);
 
@@ -106,7 +76,7 @@ const SignUpForm = ({ submitForm }) => {
             <h2 className = "sign-up_title">Welcome to KSEA Chapter!</h2>                
                 <h2 className = "sign-up_title">Create your new account</h2>                
             </div>
-            <form className="form-wrapper" onSubmit= {submit}>                
+            <form className="form-wrapper" >                
                 <div className = "sign-up_name">
                     <label className ="sign_up_label">Last Name</label>
                     <input className = "sign_up_input" type="text" name="lastname" value={values.lastname} onChange={handleChange}/>

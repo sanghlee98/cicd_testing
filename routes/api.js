@@ -14,8 +14,24 @@ router.get('/', (req, res) => {
         })
         .catch((error) => {
             console.log('error: ', daerrorta);
-        });
+        }); 
     
+})
+
+// Update User Information
+router.post('/update', (req, res) => {
+
+    console.log('Body: ' , req.body);
+
+    const {email, lastname, firstname, password, major} = req.body;
+
+    const doc2 = KSEA_MODEL.findOne({email: email}, (err, user) => {
+
+    })    
+    doc2.updateOne({email:email}, { $set: {lastname:lastname, firstname:firstname, password:password, major:major}});
+
+    res.send({message: "Your profile has been updated successfully."})
+
 })
 
 router.post("/login", (req, res) => {

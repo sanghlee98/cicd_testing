@@ -7,7 +7,11 @@ const KSEA_schema = new Schema({
     firstname: String,   
     email: String,
     password: String,
-    major: String
+    major: String,
+    auth: {
+        type: Boolean,
+        default: false
+    }
 });
 
 // Model
