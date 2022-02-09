@@ -13,7 +13,7 @@ export default function Products() {
 
   return (
     <>
-      <div class="title">
+      <div class="product-background">
         <h1>Contact US</h1>
         Want To Get In Touch? Feel Free To Say Hello!
       </div>

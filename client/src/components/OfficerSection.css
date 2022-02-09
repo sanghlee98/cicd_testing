@@ -19,6 +19,31 @@
   width: 120px;
 }
 
+.officer-title {
+  background-image: url('./../Images/background_offier2.png');
+  padding: 150px;
+  text-align: center;
+  font-size: 35px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display:block;
+  background-size: 1920px 494px;
+  object-fit: fill;
+}
+
+.officer-background {
+  background-image: url('./../Images/background_offier2.png');
+  padding: 150px;
+  text-align: center;
+  font-size: 35px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display:block;
+  background-size: 100% 100%;
+  object-fit: fill;
+  color: white
+}
+
 
 
 

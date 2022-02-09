@@ -46,11 +46,12 @@ function Cards(){
                     
                 
 
-                    <label className="form-label h1">UPCOMING EVENTS </label>
+                    
                     <div className="col-12 mb-5">
                         <div className="mb-3 col-4 mx-auto text-center">
                             
                             <label className="form-label h4">Search </label>{' '}
+                            &nbsp;&nbsp;
                             <input 
                                 type="text"
                                 className="from-control"
