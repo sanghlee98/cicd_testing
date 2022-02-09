@@ -12,18 +12,21 @@ function InfoSection() {
       
       <div className='flexbox-container'>
         <div className='flexbox-item flexbox-item1'>
-            <img src = '/images/one.png' style = {{width : '40px', height : '40px', borderRadius : '5px'}} class="rounded mx-auto d-block" />    
-            <h3>International Cooperation</h3>
+            <img src = '/images/one.png' style = {{width : '40px', height : '40px', borderRadius : '5px', marginBottom : '5px'}} class="rounded mx-auto d-block" />    
+            <h3>International</h3>
+            <h3>Cooperation</h3>
             <p3>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p3>
         </div>
         <div className='flexbox-item flexbox-item2'>
-            <img src = '/images/one.png' style = {{width : '40px', height : '40px', borderRadius : '5px'}} class="rounded mx-auto d-block"/>
-            <h3>Career Development</h3>
+            <img src = '/images/one.png' style = {{width : '40px', height : '40px', borderRadius : '5px', marginBottom : '5px'}} class="rounded mx-auto d-block"/>
+            <h3>Career</h3>
+            <h3>Development</h3>
             <p3>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p3>
         </div>
         <div className='flexbox-item flexbox-item3'>
-            <img src = '/images/one.png' style = {{width : '40px', height : '40px', borderRadius : '5px'}} class="rounded mx-auto d-block"/>
-            <h3>Community Service</h3>
+            <img src = '/images/one.png' style = {{width : '40px', height : '40px', borderRadius : '5px', marginBottom : '5px'}} class="rounded mx-auto d-block"/>
+            <h3>Community</h3>
+            <h3>Service</h3>
             <p3>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p3>
         </div>
         {/* <div className='axis main-axis'></div>

@@ -7,7 +7,7 @@ export default function Services() {
   return (
     <>
       <div class="background">
-        Korean-American Scientists and Engineers
+      <h1>Upcoming Events</h1>
       </div>
       <Cards />
     </>

@@ -25,6 +25,19 @@ body {
     object-fit: fill;
 
   }
+
+  .product-background {
+    background-image: url('./../Images/background_contact.jpg');
+    padding: 150px;
+    text-align: center;
+    font-size: 35px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display:block;
+    background-size: 100% 100%;
+    object-fit: fill;
+    color: white
+  }
   
   /* Create two columns/boxes that floats next to each other */
   .nav {
