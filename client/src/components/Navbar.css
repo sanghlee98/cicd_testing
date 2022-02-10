@@ -3,6 +3,7 @@
   height: 80px;
   display: flex;
   justify-content: center;
+  max-width: 100%;
   align-items: center;
   font-size: 1.2rem;
   position: sticky;
@@ -47,18 +48,6 @@
 
 .nav-item {
   height: 80px;
-}
-
-.buttonDeco {
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.buttonDeco .btnSign {
-  color: #fff;
-  font-family: 'Mulish', sans-serif;
-  border: 3px solid #fff;
-  margin: 6px;
 }
 
 .nav-links {
@@ -167,4 +156,74 @@
     color: #800000;
     transition: 250ms;
   }
+}
+:root{
+  --bg: #24526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms;
+} 
+.navProfile {
+  height: 60px;
+  background-color: #242526;
+  padding: 0 1rem;
+  border-bottom: 1px solid #474a4d;
+}
+
+.navProfile-item{
+  width: calc(60px * 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.Profile-icon-button{
+  --button-size: calc(60px * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: #484a4d;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Profile-icon-button:hover {
+  filter: brightness(1.2);
+}
+
+.Profiledropdown {
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: #630d0d;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow: hidden;
+
+}
+
+.profile-menu-item{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+  color:#fff;
+  text-decoration: none;
+}
+
+.profile-menu-item:hover{
+  background-color: #832222;
+}
+.icon-right{
+  margin-left: auto;
 }

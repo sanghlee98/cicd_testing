@@ -4,6 +4,7 @@ image {
   height: 100%;
   position: fixed;
   z-index: -1;
+  
 }
 
 .hero-container {
@@ -16,13 +17,24 @@ image {
   justify-content: center;
   align-items: center;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  background-size: 100% 100%;
   object-fit: contain; 
+}
+
+.hero-container > img {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+
 }
 
 .hero-container > h1 {
   color: #fff;
   font-size: 44px;
-  margin-top: -500px;
+  margin-top: 200px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: bold;

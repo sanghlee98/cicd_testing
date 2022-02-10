@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -17,13 +17,17 @@ function Navbar() {
       setButton(true);
     }
   };
+  
+  const logOut = (event) => {
+    props.setLoginUser({});
+  };
 
   useEffect(() => {
     showButton();
   }, []);
 
   window.addEventListener('resize', showButton);
-
+  console.log(props.user)
   return (
     <>
       <nav className='navbar'>
@@ -79,21 +83,57 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
-          </ul>
-          
-          <div className='buttonDeco'>
-          <Button 
-          className= 'btnSign'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-          color="#FFF"
-          >
-          Log in</Button>
-          </div>
-
+         
+          </ul>    
+          {
+            props.user ?
+            // <Button buttonStyle='btn--outline' onClick={logOut}>Log Out</Button> : <Button buttonStyle='btn--outline'>Log in</Button>
+            <NavItem icon= {props.user}><DropdownMenu user={props}/></NavItem> : <Button buttonStyle='btn--outline'>Log in</Button>
+          }
         </div>
       </nav>
     </>
+  );
+}
+
+function DropdownMenu(props) {
+
+  // function DropdownItem(props){
+        
+  //   return (
+  //      <Link to= "/MyProfile" className="profile-menu-item">
+  //        <span className="Profile-icon-button">{props.leftIcon}</span>
+  //        {props.children}    
+  //     </Link>
+  //   )
+  // }
+  
+  const logOut = (event) => {
+    props.user.setLoginUser({});
+  };
+
+  return (
+    
+    <div className="Profiledropdown">
+      {/* <DropdownItem user={props}>My Profile</DropdownItem> */}
+      <Link to = "/MyProfile" className="profile-menu-item">
+         <span className="Profile-icon-button">{props.leftIcon}</span>
+          My Profile</Link>
+      <a href="#" className="profile-menu-item" onClick={logOut}>Log Out</a> 
+    </div>
+    
+  )
+}
+
+function NavItem(props) {
+
+  const [open, setOpen] = useState(false);
+
+  return (
+    <li className = "navProfile-item">       
+      <button buttonStyle='btn--outline' onClick={() => setOpen(!open)}>{props.icon.firstname}</button>
+      {open && props.children}
+    </li>
   );
 }
 
