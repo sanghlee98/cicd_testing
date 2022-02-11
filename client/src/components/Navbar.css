@@ -47,7 +47,7 @@
 }
 
 .nav-item {
-  height: 80px;
+  height: 90px;
 }
 
 .nav-links {
@@ -71,6 +71,7 @@
 .nav-links-mobile {
   display: none;
 }
+
 
 .menu-icon {
   display: none;

@@ -8,8 +8,15 @@
   display: inline-block;
   border-radius: 5%;
   text-align: center;
+  font-family: Mulish;
+  font-style: normal;
+  letter-spacing: 0.3px;
 }
 
+.list > p {
+  font-family: Mulish;
+  letter-spacing: 0.3px;
+}
 
 .social-icon {
   display: flex;
