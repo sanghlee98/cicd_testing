@@ -35,10 +35,7 @@ function MyProfile({user}) {
     const handleFormSubmit = (event)=>{   
 
         console.log("handleFormSubmit ");     
-        event.preventDefault();
-        // setErrors(validation(values));
-        // setDataIsCorrect(true);        
-        
+        event.preventDefault();        
         const {email, lastname, firstname, password, major} = values        
         if(lastname){  
 
@@ -72,8 +69,8 @@ function MyProfile({user}) {
     <div className = "form_container">
     <div className = "form_wrapper">
     <div>
-    <h2 className = "sign-up_title">Welcome to KSEA Chapter!</h2>                
-        <h2 className = "sign-up_title">Create your new account</h2>                
+    <h2 className = "sign-up_title">Welcome Come Back {user.firstname}!</h2>                
+        <h2 className = "sign-up_title">Edit your new account</h2>                
     </div>
     <form className="form-wrapper" >                
         <div className = "sign-up_name">
@@ -98,7 +95,7 @@ function MyProfile({user}) {
             {/* {errors.lastname && <p className="error">{errors.lastname}</p>} */}
         </div>
         <div>
-            <button className ="submit" onClick={handleFormSubmit}>Sign up</button>                    
+            <button className ="submit" onClick={handleFormSubmit}>Update</button>                    
             {/* <button className ="submit">Submit</button> */}
         </div>
     </form>
