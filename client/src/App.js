@@ -12,6 +12,7 @@ import Form from './components/pages/Form';
 import Homepage from './components/pages/Homepage';
 import MyProfile from './components/pages/MyProfile';
 import {useState} from 'react';
+import AddEvent from './components/pages/AddEvent';
 function App() {
 
   const [user, setLoginUser] = useState({})
@@ -40,24 +41,11 @@ function App() {
           <Route path='/MyProfile' component={MyProfile} user={user}>
             {
               (user && user._id) ? <MyProfile user={user}/> : <SignUp setLoginUser={setLoginUser}/>
-            }
+            }            
           </Route>            
+          <Route path='/add-event' component={AddEvent} />
         </Switch>
       </Router>          
-      // <Router>  
-      //   <Navbar />      
-      //   <Switch>
-      //     <Route exact path='/' element = {user && user._id ? <Homepage setLoginUser={setLoginUser}/> : <SignUp setLoginUser={setLoginUser}/>}>            
-
-      //     </Route>
-      //     <Route path='/upcoming event' component={Services} />
-      //     <Route path='/contact us' component={Products} />
-      //     <Route path='/sign-up' component={SignUp} setLoginUser={setLoginUser}> 
-      //     </Route> 
-      //     <Route path='/Sign up' component={SignUpForm} />  
-      //     <Route path='/Homepage' setLoginUser={setLoginUser} component={Homepage} />          
-      //   </Switch>
-      // </Router>    
   );
 }
 

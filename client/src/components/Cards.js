@@ -1,18 +1,17 @@
 import React, {useState} from 'react'
 import './Cards.css';
 import eventData from './eventData';
-
+import { Link } from 'react-router-dom';
 import Model from '../Model';
 
 
 function Cards(){
+    
     const [model, setModel] = useState(false);
     const [tempdata, setTempdata] = useState([]);
     const [noOfElement, setnoOfElement] = useState(8);
     const [filter, setFilter] = useState('');
-
     
-
     const getData = (img,title,shortDes, desc, link, date) =>{
         let tempData = [img,title,shortDes,desc,link ,date];
         setTempdata(item=>[1, ...tempData]);
@@ -41,25 +40,33 @@ function Cards(){
     return (
         
         <>
-            <section className="py-4 py-lg-5 container">
-                <div className="row justify-content-center align-item-center">
-                    
-                
+                    <section className="py-4 py-lg-5 container">
+                                    <div className="row justify-content-center align-item-center">
+                                        
+                                    
 
-                    
-                    <div className="col-12 mb-5">
-                        <div className="mb-3 col-4 mx-auto text-center">
-                            
-                            <label className="form-label h4">Search </label>{' '}
-                            &nbsp;&nbsp;
-                            <input 
-                                type="text"
-                                className="from-control"
-                                value={filter}
-                                onChange={searchText.bind(this)}
-                            />
-                        </div>
-                    </div>
+                                        <label className="form-label h1">UPCOMING EVENTS </label>
+                                        <div className="col-12 mb-5">
+                                            <div className="mb-3 col-4 mx-auto text-center">
+                                                
+                                                <label className="form-label h4">Search </label>{' '}
+                                                <input 
+                                                    type="text"
+                                                    className="from-control"
+                                                    value={filter}
+                                                    onChange={searchText.bind(this)}
+                                                />
+                                            </div>
+                                            <div>
+                                                <button><Link
+                                                    to='/add-event'
+                                                    className='add-event'
+                                                >
+                                                    Add Event
+                                                </Link></button>
+                                            </div>
+                                        </div>
+
 
                     {slice.map((item, index)=>{
                         return(

@@ -4,6 +4,7 @@ const router = express.Router();
 
 const KSEA_MODEL = require('../models/tamuksea');
 
+const KSEA_EVENT = require('../models/tamuevent')
 // Routes
 router.get('/', (req, res) => {
 
@@ -51,6 +52,44 @@ router.post("/login", (req, res) => {
         }
 
     })
+})
+
+router.post('/event', (req, res) => {
+
+    console.log('Body: ' , req.body);
+
+    const data = req.body;
+        
+    const {title, shortDesc, desc, link} = req.body
+
+    console.log('title: ' , title);
+
+    KSEA_EVENT.findOne({title:title}, (err, event)=>{       
+        
+        if(event){            
+            res.send({msg: "Event already exists"});
+        }
+        else{
+            
+            const newKSEA_event = new KSEA_EVENT(data);
+
+            newKSEA_event.save((error) => {
+                if (error){
+                    res.status(500).json({msg: 'Sorry, internal server errors'})
+                }
+                else{
+                    res.json({
+                        msg: 'Event Successfully Registered.'
+                    });                    
+                }
+            })
+        }
+    })
+    //newKSEA_USER.findOne({})
+
+    console.log(data);
+
+
 })
 
 router.post('/save', (req, res) => {
