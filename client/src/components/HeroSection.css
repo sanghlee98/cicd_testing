@@ -33,12 +33,12 @@ image {
 
 .hero-container > h1 {
   color: #fff;
-  font-size: 44px;
+  font-size: 32px;
   margin-top: 200px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: bold;
-  letter-spacing: 0.2px;
+  letter-spacing: 2px;
   line-height: 56px;/* or 127% */
   position:static;
   width: 730px;

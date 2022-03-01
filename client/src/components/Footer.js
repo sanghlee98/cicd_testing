@@ -8,7 +8,7 @@ function Footer() {
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Sign up for our mailing list for events, updats, and more
+          Sign up for our mailing list for events, updates, and more
         </p>
         <div className='input-areas'>
           <form>
@@ -46,7 +46,7 @@ function Footer() {
             &nbsp;KSEA
             </Link>
           </div>
-          <small class='website-rights'>KSEA © 2021</small>
+          <small class='website-rights'>KSEA © 2022</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
