@@ -19,6 +19,31 @@ router.get('/', (req, res) => {
     
 })
 
+// https://kb.objectrocket.com/mongo-db/mongoose-find-all-818
+// Getting event data from the database
+// router.get("/find").get(function(req, res) {
+//     KSEA_EVENT_MODEL.find({}, function(err, result) {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         //res.json(result);
+//         res.send(result)
+//       }
+//     });
+//   });
+
+router.post('/find', (req, res) => {
+    console.log("find suc")
+    KSEA_EVENT.find({}, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        //res.json(result);
+        res.send(result)
+      }
+    });
+})
+
 // Update User Information
 router.post('/update', (req, res) => {
 

@@ -48,8 +48,11 @@ function EventForm(){
       console.log(res.data)
       if(res.data.msg === 'Event Successfully Registered.'){
         alert(res.data.msg )
-        console.log(res.data)        
-        history.push("/")
+        console.log(res.data)  
+        
+        //insert data
+        
+        history.push("/add-event")
       }
       else{
         console.log(res.data)        

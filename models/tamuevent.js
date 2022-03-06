@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const KSEA_event = new Schema({
-    title: String,
-    shortDesc: String,
-    desc: String,
-    link: String,
-    date: Date,
-    location: String,
-    label: String
+        title: String,
+        shortDesc: String,
+        desc: String,
+        link: String,
+        date: Date,
+        location: String,
+        label: String
 });
 
 // Model
