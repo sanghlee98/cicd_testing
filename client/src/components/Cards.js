@@ -5,24 +5,40 @@ import { Link } from 'react-router-dom';
 import Model from '../Model';
 import axios from "axios"
 
-function Cards(){
-    
+function Cards({user}){
+
+
+    const initialState = 
+    [{_id: "",
+        title:"",
+        shortDesc: "",
+        desc:'',
+        link:''}]
     const [model, setModel] = useState(false);
     const [tempdata, setTempdata] = useState([]);
     const [noOfElement, setnoOfElement] = useState(8);
     const [filter, setFilter] = useState('');
     const [values, setValues] = useState({
+        _id: "",
         title:"",
+        shortDesc: "",
+        desc:'',
+        link:''
     })
     const [eventList, seteventList] = useState();
     const [slic, setSlic] = useState([]);
-    
-    const getData = (img,title,shortDes, desc, link, date) =>{
-        let tempData = [img,title,shortDes,desc,link ,date];
+    const [state, setState] = useState(initialState);
+
+
+    const getData = (title,shortDes, desc) =>{              
+        console.log(initialState.title)
+        let tempData = [title,shortDes,desc];
         setTempdata(item=>[1, ...tempData]);
-        return setModel(true);
-        
+        console.log(tempdata) 
+        console.log(title)
+        return setModel(true);          
     };
+
 
     // let temp_event = []
     const loadMore = () => {
@@ -50,68 +66,121 @@ function Cards(){
     const load_event= (props) => {
         console.log("clicked")
         console.log({props})
-        // {temp_().temp_event.map((item) => {                        
-        //     console.log({item})
-        //     return (<span>{item}</span>)
-        // })}
+    
+    }
+    const deleteEvent= (_id) => {
+
+        axios.post("/api/delete", _id)        
+        .then(res => {            
+            console.log(res)  
+                 
+        })  
     }
     
     let temp_event = []
     var review = []
     var t= []
+    var id = []
     let temp_ = () => {    
         axios.post("/api/find", values)        
         .then(res => {            
-            console.log("cards data")                         
-            res.data.forEach((item, i) =>{                                     
-                // console.log(item)
-                temp_event.push(item)                                            
-                {temp_event.map((item)=> {                  
-                                      
-                    review = review.concat(t);
-                })}
-            })
-            //console.log(review)
+            setState(res)  
+                 
         })  
         
         return(
-            {temp_event}
+            {state}
         )
-    };
-    // let dataSearch = eventData.cardData.filter(item=>{
-    //     return Object.keys(item).some(key=>
-    //         item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
-    //         )
-    //     });
+    };  
+
+    if(!user){
+        user = false;
+    }
     
-    // console.log(temp_event)
-    // const slice = Object.keys(temp_event).sort((a,b)=>a.label<b.label ? -1:1).slice(0,noOfElement);
-    // const slice = temp_event
-    // console.log(Object.keys(temp_event))
-    console.log(review)
-    console.log(t[0])
-    console.log(temp_event  )
-    const uniqueNames = Array.from(new Set(temp_event));
-    console.log(uniqueNames)
-    // console.log(temp_event.filter(item => {        
-    //     return Object.keys(item).some(key=>                                        
-    //                 item[key].toString().toLowerCase()
-    //     )
-    // }    
-    // ))
-    console.log(Object.entries(temp_event))
-
-    console.log(temp_().temp_event)
-    {temp_().temp_event.map((item) => {   
-     
-    })}
-
     return (
         <>  
-            <p>output</p>
-            {temp_().temp_event.map((item) => {                        
-             return (<span>${item}</span>)
-             })}
+         <section className="py-4 py-lg-5 container">
+         
+         <div className="row justify-content-center align-item-center">
+                                        
+                                    
+
+                                        <label className="form-label h1">UPCOMING EVENTS </label>
+                                        <div className="col-12 mb-5">
+                                            <div className="mb-3 col-4 mx-auto text-center">
+                                                
+                                                <label className="form-label h4">Search </label>{' '}
+                                                <input 
+                                                    type="text"
+                                                    className="from-control"
+                                                    value={filter}
+                                                    onChange={searchText.bind(this)}
+                                                />
+                                            </div>
+                                           
+            </div> 
+             
+            
+            
+            
+            <div>   
+                {user.auth ? 
+                    <button><Link
+                        to='/add-event'
+                        className='add-event'>Add Event</Link></button>                                                                          
+                    :
+                    <div></div>
+                }
+            </div>            
+            
+            <div>   
+                {user.auth ? 
+                    <button onClick={()=>deleteEvent()}>Delete Event</button>                                                                          
+                    :
+                    <div></div>
+                }
+            </div>         
+            
+            <span>{temp_()[0]}</span>
+            
+            {state.data?.map(({_id, title, shortDesc, desc}) => {
+            // <li className="travelcompany-input">
+            //     <span className="input-label">{title }</span>
+                
+            // </li>
+            return(
+               
+                
+                <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" >
+                    <div className="card p-0 overflow-hidden h-100 shadow">
+                        
+                        <figure className="cards__item__pic-wrap" >
+                            <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" alt="new" className="cards__item__img"/>
+                        </figure> 
+
+                        <div className="card-body">
+                            
+                            <h5 className="card-title">{title}</h5>
+                            <p className="card-text">{shortDesc}</p>
+                            <button className="btn btn-outline-danger" onClick={()=>getData(title, shortDesc, desc)}>RSVP</button>
+                            <div>
+                                {user.auth ?
+                                    <button className="btn btn-outline-danger delete-event" onClick={()=>deleteEvent(_id)}>Delete event</button> : null
+                                }
+                            </div>
+                        </div>
+                        {/* <li class="list-group-item">Events on {item.date}</li> */}
+                    </div>
+                </div>
+                
+            )
+        })} 
+        </div>
+            </section>            
+            
+            {                    
+                    model === true ? <Model img={"https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"} title={tempdata[1]} shortDes={tempdata[2]} desc={tempdata[3]} link={tempdata[4]} hide={()=> setModel(false)} />: ''
+            }
         </> 
     )
 }

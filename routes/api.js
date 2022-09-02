@@ -44,6 +44,22 @@ router.post('/find', (req, res) => {
     });
 })
 
+router.post('/delete', (req, res) => {
+    
+    console.log("delete***************")
+    console.log(req.body[0])
+    const {_id} = req.body[0];
+    console.log(_id)
+    
+    const doc2 = KSEA_EVENT.findOne({_id: _id}, (err, user) => {
+
+    })    
+    doc2.deleteOne({ _id: _id }, function (err, results) {
+    });
+    
+    
+})
+
 // Update User Information
 router.post('/update', (req, res) => {
 
@@ -113,8 +129,6 @@ router.post('/event', (req, res) => {
     //newKSEA_USER.findOne({})
 
     console.log(data);
-
-
 })
 
 router.post('/save', (req, res) => {

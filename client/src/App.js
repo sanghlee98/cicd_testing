@@ -13,6 +13,8 @@ import Homepage from './components/pages/Homepage';
 import MyProfile from './components/pages/MyProfile';
 import {useState} from 'react';
 import AddEvent from './components/pages/AddEvent';
+import UpcomingEvent from './components/Cards.js';
+
 function App() {
 
   const [user, setLoginUser] = useState({})
@@ -29,7 +31,9 @@ function App() {
               (user && user._id) ? <Home user={user}/> : <Home />
             }  
           </Route>         
-          <Route path='/upcoming event' component={Services} />
+          <Route path='/upcoming event' component={Services} user={user}>
+            {(user && user._id) ? <UpcomingEvent user={user}/> : <UpcomingEvent />}
+          </Route>
           <Route path='/contact us' component={Products} />
           <Route path='/officers' component={Officers} />
           <Route path='/sign-up' component={SignUp} setLoginUser={setLoginUser}> 

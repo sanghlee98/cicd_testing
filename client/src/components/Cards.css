@@ -1,8 +1,11 @@
+
 .cards {
     padding: 4rem;
     background: #fff;
   }
-  
+  .delete-event {
+
+  }  
   h1 {
     text-align: center;
   }
