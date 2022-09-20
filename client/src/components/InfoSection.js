@@ -43,19 +43,19 @@ function InfoSection() {
             <img src = '/images/globe2.svg' style = {{width : '40px', height : '40px', borderRadius : '5px', marginBottom : '10px'}} class="rounded mx-auto d-block" />    
             <h3>International</h3>
             <h3>Cooperation</h3>
-            <p3>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p3>
+            <p3>Get information on professional opporunities in both U.S. and Korea, and network with other Korean-American scientists and engineers. </p3>
         </div>
         <div className='flexbox-item flexbox-item2'>
             <img src = '/images/reception-4.svg' style = {{width : '40px', height : '40px', borderRadius : '5px', marginBottom : '10px'}} class="rounded mx-auto d-block"/>
             <h3>Career</h3>
             <h3>Development</h3>
-            <p3>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p3>
+            <p3>Develop leadership experiences through committee activities and participate in technical evaluation and consulting.</p3>
         </div>
         <div className='flexbox-item flexbox-item3'>
             <img src = '/images/people.svg' style = {{width : '40px', height : '40px', borderRadius : '5px', marginBottom : '10px'}} class="rounded mx-auto d-block"/>
-            <h3>Community</h3>
+            <h3>Community </h3>
             <h3>Service</h3>
-            <p3>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p3>
+            <p3>Opportunities for community service: participate in community service activities locally or help organizing National KSEA events.</p3>
         </div>
         {/* <div className='axis main-axis'></div>
         <div className='axis cross-axis'></div> */}
