@@ -3,45 +3,105 @@ import './Cards.css';
 import eventData from './eventData';
 import { Link } from 'react-router-dom';
 import Model from '../Model';
+import axios from "axios"
+
+function Cards({user}){
 
 
-function Cards(){
-    
+    const initialState = 
+    [{_id: "",
+        title:"",
+        shortDesc: "",
+        desc:'',
+        link:''}]
     const [model, setModel] = useState(false);
     const [tempdata, setTempdata] = useState([]);
     const [noOfElement, setnoOfElement] = useState(8);
     const [filter, setFilter] = useState('');
-    
-    const getData = (img,title,shortDes, desc, link, date) =>{
-        let tempData = [img,title,shortDes,desc,link ,date];
+    const [values, setValues] = useState({
+        _id: "",
+        title:"",
+        shortDesc: "",
+        desc:'',
+        link:''
+    })
+    const [eventList, seteventList] = useState();
+    const [slic, setSlic] = useState([]);
+    const [state, setState] = useState(initialState);
+
+
+    const getData = (title,shortDes, desc) =>{              
+        console.log(initialState.title)
+        let tempData = [title,shortDes,desc];
         setTempdata(item=>[1, ...tempData]);
-        return setModel(true);
-        
+        console.log(tempdata) 
+        console.log(title)
+        return setModel(true);          
     };
 
+
+    // let temp_event = []
     const loadMore = () => {
+        
+        console.log("temp")
+        // axios.post("/api/find", values)        
+        // .then(res => {            
+        //     console.log("cards data")
+            
+        //     // event_list["cardData"].push(res.data)        
+        //     res.data.forEach((item, i) =>{                                     
+        //         temp_event.push(item)                
+        //     })
+        // })
+        // console.log(temp_event)
         setnoOfElement(noOfElement + noOfElement); 
+
+        
     }
     
     const searchText = (event) => {
         setFilter(event.target.value);
     }
 
-    let dataSearch = eventData.cardData.filter(item=>{
-        return Object.keys(item).some(key=>
-            item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
-            )
-        });
+    const load_event= (props) => {
+        console.log("clicked")
+        console.log({props})
+    
+    }
+    const deleteEvent= (_id) => {
+
+        axios.post("/api/delete", _id)        
+        .then(res => {            
+            console.log(res)  
+                 
+        })  
+    }
+    
+    let temp_event = []
+    var review = []
+    var t= []
+    var id = []
+    let temp_ = () => {    
+        axios.post("/api/find", values)        
+        .then(res => {            
+            setState(res)  
+                 
+        })  
         
-    const slice = dataSearch.sort((a,b)=>a.label<b.label ? -1:1).slice(0,noOfElement);
+        return(
+            {state}
+        )
+    };  
 
-
-
+    if(!user){
+        user = false;
+    }
+    
     return (
-        
-        <>
-                    <section className="py-4 py-lg-5 container">
-                                    <div className="row justify-content-center align-item-center">
+        <>  
+         <section className="py-4 py-lg-5 container">
+         
+         <div className="row justify-content-center align-item-center">
                                         
                                     
 
@@ -57,46 +117,71 @@ function Cards(){
                                                     onChange={searchText.bind(this)}
                                                 />
                                             </div>
-                                            <div>
-                                                <button><Link
-                                                    to='/add-event'
-                                                    className='add-event'
-                                                >
-                                                    Add Event
-                                                </Link></button>
-                                            </div>
-                                        </div>
-
-
-                    {slice.map((item, index)=>{
-                        return(
-                            <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index}>
-                                <div className="card p-0 overflow-hidden h-100 shadow">
-
-                                    <figure className="cards__item__pic-wrap" data-category={item.label}>
-                                        <img src={item.imgSrc} alt="event1" className="cards__item__img"/>
-                                    </figure> 
-     
-                                    <div className="card-body">
-                                        
-                                        <h5 className="card-title">{item.title}</h5>
-                                        <p className="card-text">{item.shortDes}</p>
-                                        <button className="btn btn-outline-danger" onClick={()=>getData(item.imgSrc, item.title, item.shortDes, item.desc, item.link, item.date)}>RSVP</button>
-                                    </div>
-                                    <li class="list-group-item">Events on {item.date}</li>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-                <button className="btn btn-danger d-block w-100" onClick={()=>loadMore()}>
-                    Load More
-                </button>
-            </section>
-                {
-                    model === true ? <Model img={tempdata[1]} title={tempdata[2]} shortDes={tempdata[3]} desc={tempdata[4]} link={tempdata[5]} hide={()=> setModel(false)} />: ''
+                                           
+            </div> 
+             
+            
+            
+            
+            <div>   
+                {user.auth ? 
+                    <button><Link
+                        to='/add-event'
+                        className='add-event'>Add Event</Link></button>                                                                          
+                    :
+                    <div></div>
                 }
-        </>
+            </div>            
+            
+            <div>   
+                {user.auth ? 
+                    <button onClick={()=>deleteEvent()}>Delete Event</button>                                                                          
+                    :
+                    <div></div>
+                }
+            </div>         
+            
+            <span>{temp_()[0]}</span>
+            
+            {state.data?.map(({_id, title, shortDesc, desc}) => {
+            // <li className="travelcompany-input">
+            //     <span className="input-label">{title }</span>
+                
+            // </li>
+            return(
+               
+                
+                <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" >
+                    <div className="card p-0 overflow-hidden h-100 shadow">
+                        
+                        <figure className="cards__item__pic-wrap" >
+                            <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" alt="new" className="cards__item__img"/>
+                        </figure> 
+
+                        <div className="card-body">
+                            
+                            <h5 className="card-title">{title}</h5>
+                            <p className="card-text">{shortDesc}</p>
+                            <button className="btn btn-outline-danger" onClick={()=>getData(title, shortDesc, desc)}>RSVP</button>
+                            <div>
+                                {user.auth ?
+                                    <button className="btn btn-outline-danger delete-event" onClick={()=>deleteEvent(_id)}>Delete event</button> : null
+                                }
+                            </div>
+                        </div>
+                        {/* <li class="list-group-item">Events on {item.date}</li> */}
+                    </div>
+                </div>
+                
+            )
+        })} 
+        </div>
+            </section>            
+            
+            {                    
+                    model === true ? <Model img={"https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"} title={tempdata[1]} shortDes={tempdata[2]} desc={tempdata[3]} link={tempdata[4]} hide={()=> setModel(false)} />: ''
+            }
+        </> 
     )
 }
 

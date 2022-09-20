@@ -19,6 +19,47 @@ router.get('/', (req, res) => {
     
 })
 
+// https://kb.objectrocket.com/mongo-db/mongoose-find-all-818
+// Getting event data from the database
+// router.get("/find").get(function(req, res) {
+//     KSEA_EVENT_MODEL.find({}, function(err, result) {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         //res.json(result);
+//         res.send(result)
+//       }
+//     });
+//   });
+
+router.post('/find', (req, res) => {
+    console.log("find suc")
+    KSEA_EVENT.find({}, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        //res.json(result);
+        res.send(result)
+      }
+    });
+})
+
+router.post('/delete', (req, res) => {
+    
+    console.log("delete***************")
+    console.log(req.body[0])
+    const {_id} = req.body[0];
+    console.log(_id)
+    
+    const doc2 = KSEA_EVENT.findOne({_id: _id}, (err, user) => {
+
+    })    
+    doc2.deleteOne({ _id: _id }, function (err, results) {
+    });
+    
+    
+})
+
 // Update User Information
 router.post('/update', (req, res) => {
 
@@ -88,8 +129,6 @@ router.post('/event', (req, res) => {
     //newKSEA_USER.findOne({})
 
     console.log(data);
-
-
 })
 
 router.post('/save', (req, res) => {
