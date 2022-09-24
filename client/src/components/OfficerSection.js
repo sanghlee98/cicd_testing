@@ -12,8 +12,8 @@ function OfficerSection() {
 <center>
   <div className='list'>
   <img src = '/images/img1.png' style = {{width : '180px', height : '180px', borderRadius : '5px'}} />
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '20px', fontWeight: 'bold'}}>Jeonghoon Seo</p> 
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '17px'}}>President</p>
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontSize: '20px', fontWeight: 'bold'}}>Jeonghoon Seo</p> 
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontSize: '17px'}}>President</p>
   <div class='social-icon'>
             <Link
               class='social-icon-link facebook'
@@ -45,8 +45,8 @@ function OfficerSection() {
 
   <div className='list'>
   <img src = '/images/img2.png' style = {{width : '180px', height : '180px', borderRadius : '5px'}} />
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '20px', fontWeight: 'bold'}}>Hwiho Kim</p> 
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '17px'}}>Vice President</p> 
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '20px', fontWeight: 'bold'}}>Hwiho Kim</p> 
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '17px'}}>Vice President</p> 
   <div class='social-icon'>
             <Link
               class='social-icon-link facebook'
@@ -77,8 +77,8 @@ function OfficerSection() {
 
   <div className='list'>
   <img src = '/images/img3.png' style = {{width : '180px', height : '180px', borderRadius : '5px'}} />
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '20px', fontWeight: 'bold'}}>Racheal Shin</p> 
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '17px'}}>Treasury</p>
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '20px', fontWeight: 'bold'}}>Racheal Shin</p> 
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '17px'}}>Treasury</p>
   <div class='social-icon'>
             <Link
               class='social-icon-link facebook'
@@ -117,8 +117,8 @@ function OfficerSection() {
 
 <div className='list'>
   <img src = '/images/img4.png' style = {{width : '180px', height : '180px', borderRadius : '5px'}} />
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '20px', fontWeight: 'bold'}}>Yeonsu Jeong</p> 
-  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '17px'}}>IT Officer</p>
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '20px', fontWeight: 'bold'}}>Yeonsu Jeong</p> 
+  <p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '17px'}}>IT Officer</p>
   <div class='social-icon'>
             <Link
               class='social-icon-link facebook'
@@ -150,8 +150,8 @@ function OfficerSection() {
   
 <div className='list'>
 <img src = '/images/img4.png' style = {{width : '180px', height : '180px', borderRadius : '5px'}} />
-<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '20px', fontWeight: 'bold'}}>Yeonsu Jeong</p> 
-<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '17px'}}>IT Officer</p>
+<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '20px', fontWeight: 'bold'}}>Yeonsu Jeong</p> 
+<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '17px'}}>IT Officer</p>
 <div class='social-icon'>
           <Link
             class='social-icon-link facebook'
@@ -182,8 +182,8 @@ function OfficerSection() {
 
 <div className='list'>
 <img src = '/images/img4.png' style = {{width : '180px', height : '180px', borderRadius : '5px'}} />
-<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '20px', fontWeight: 'bold'}}>Yeonsu Jeong</p> 
-<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Trebuchet MS', fontSize: '17px'}}>IT Officer</p>
+<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '20px', fontWeight: 'bold'}}>Yeonsu Jeong</p> 
+<p style = {{marginTop: '5px', marginBottom : '5px', fontFamily : 'Mulish', fontSize: '17px'}}>IT Officer</p>
 <div class='social-icon'>
           <Link
             class='social-icon-link facebook'
