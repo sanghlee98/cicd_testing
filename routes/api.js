@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
         })
         .catch((error) => {
             console.log('error: ', daerrorta);
-        }); 
-    
+        });
+
 })
 
 // https://kb.objectrocket.com/mongo-db/mongoose-find-all-818
@@ -45,19 +45,19 @@ router.post('/find', (req, res) => {
 })
 
 router.post('/delete', (req, res) => {
-    
+
     console.log("delete***************")
     console.log(req.body[0])
     const {_id} = req.body[0];
     console.log(_id)
-    
+
     const doc2 = KSEA_EVENT.findOne({_id: _id}, (err, user) => {
 
-    })    
+    })
     doc2.deleteOne({ _id: _id }, function (err, results) {
     });
-    
-    
+
+
 })
 
 // Update User Information
@@ -69,7 +69,7 @@ router.post('/update', (req, res) => {
 
     const doc2 = KSEA_MODEL.findOne({email: email}, (err, user) => {
 
-    })    
+    })
     doc2.updateOne({email:email}, { $set: {lastname:lastname, firstname:firstname, password:password, major:major}});
 
     res.send({message: "Your profile has been updated successfully."})
@@ -77,9 +77,9 @@ router.post('/update', (req, res) => {
 })
 
 router.post("/login", (req, res) => {
-    
+
     const {email, password} = req.body
-    
+
     console.log(req.body)
     KSEA_MODEL.findOne({email: email}, (err, user) => {
         if(user){
@@ -100,18 +100,18 @@ router.post('/event', (req, res) => {
     console.log('Body: ' , req.body);
 
     const data = req.body;
-        
-    const {title, shortDesc, desc, link} = req.body
+
+    const {title, shortDesc, desc, link, date} = req.body
 
     console.log('title: ' , title);
 
-    KSEA_EVENT.findOne({title:title}, (err, event)=>{       
-        
-        if(event){            
+    KSEA_EVENT.findOne({title:title}, (err, event)=>{
+
+        if(event){
             res.send({msg: "Event already exists"});
         }
         else{
-            
+
             const newKSEA_event = new KSEA_EVENT(data);
 
             newKSEA_event.save((error) => {
@@ -121,7 +121,7 @@ router.post('/event', (req, res) => {
                 else{
                     res.json({
                         msg: 'Event Successfully Registered.'
-                    });                    
+                    });
                 }
             })
         }
@@ -136,19 +136,19 @@ router.post('/save', (req, res) => {
     console.log('Body: ' , req.body);
 
     const data = req.body;
-        
+
     const {lastname, firstname, email, password, major} = req.body
 
     console.log('email: ' , email);
 
-    KSEA_MODEL.findOne({email:email}, (err, user)=>{       
+    KSEA_MODEL.findOne({email:email}, (err, user)=>{
 
-        if(user){            
+        if(user){
             res.send({msg: "User already registered"});
         }
         else{
             //console.log("Not registered ");
-            
+
             const newKSEA_USER = new KSEA_MODEL(data);
 
             newKSEA_USER.save((error) => {

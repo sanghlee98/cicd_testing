@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import axios from "axios"
+import { Link, useHistory } from 'react-router-dom';
 
 export default class Model extends Component {
+
     render() {
+
+        const rsvp_link= () => {
+          window.open('https://docs.google.com/forms/d/1VZGCe78UmtgvABR9fegTkmfkI701JS5dEQLs_gDoR_E/prefill')
+        }
         let modelStyle = {
             display: 'block',
             backgroundColor: 'rgba(0,0,0,0.8)',
@@ -18,7 +25,7 @@ export default class Model extends Component {
                             <img src={this.props.img} className="img-fluid" />
                             <h5 className="modal-text">{this.props.shortDes}</h5>
                             <p>{this.props.desc}</p>
-                            <p><a href={this.props.link} className="btn btn-primary" target="_blank">RSVP Link</a></p>
+                            <button className="btn btn-outline-danger delete-event" onClick={()=>rsvp_link()}>RSVP LINK</button>
                         </div>
                     </div>
                 </div>
