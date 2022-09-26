@@ -3,18 +3,20 @@ import axios from "axios"
 import { Link, useHistory } from 'react-router-dom';
 
 function EventForm(){
-  
+
   const history = useHistory();
 
   const [title, setTitle] = useState('')
   const [shortDesc, setShortDesc] = useState('')
   const [desc, setDesc] = useState('')
   const [link, setLink] = useState('')
+  const [date, setDate] = useState('')
   const [values, setValues] = useState({
       title:"",
       shortDesc:"",
       desc:"",
-      link:""
+      link:"",
+      date:""
   })
 
   const handleTitleChange = event => {
@@ -48,27 +50,18 @@ function EventForm(){
       console.log(res.data)
       if(res.data.msg === 'Event Successfully Registered.'){
         alert(res.data.msg )
-        console.log(res.data)  
-        
-        //insert data
-        
+        console.log(res.data)
+
         history.push("/add-event")
       }
       else{
-        console.log(res.data)        
+        console.log(res.data)
         alert(res.data.message)
       }
     })
     .catch(err => {
       console.log(err)
     })
-    // alert(`Your state values: \n 
-    //         Title: ${title} \n 
-    //         Short Description: ${shortDesc} \n
-    //         Description: ${desc} \n
-    //         Link: ${link} \n
-    //         Change function Here`);
-
   };
 
   return (
@@ -112,6 +105,16 @@ function EventForm(){
           placeholder="Enter RSVP Link"
           onChange={handleChange}
           value={values.link}
+        />
+      </div>
+      <div>
+        <label>Link</label>
+        <input
+          type="date"
+          name="date"
+          placeholder="Enter event date (MM/DD/YY)"
+          onChange={handleChange}
+          value={values.date}
         />
       </div>
       <button type="submit">
