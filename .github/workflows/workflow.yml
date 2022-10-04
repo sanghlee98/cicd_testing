@@ -29,7 +29,4 @@ jobs:
         mongodb-version: ${{ matrix.mongodb-version }}
 
     - run: npm ci
-
-    # crete test for each
-    #- run: npm start
-    #- run: npm client
+    - run: npm test
