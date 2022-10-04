@@ -29,4 +29,6 @@ jobs:
         mongodb-version: ${{ matrix.mongodb-version }}
 
     - run: npm ci
+    # cd client
+    # or move test to root directory and run
     - run: npm test
