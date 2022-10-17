@@ -29,7 +29,6 @@ jobs:
         mongodb-version: ${{ matrix.mongodb-version }}
 
     - run: npm ci
-
     # testing rendering of the react application only
     # add tests for interaction with database
     - run: npm test
