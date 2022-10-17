@@ -14,4 +14,6 @@ export default function Services() {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Services />, rootElement);
+if(rootElement) {
+  ReactDOM.render(<Services />, rootElement);
+}

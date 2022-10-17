@@ -29,6 +29,7 @@ jobs:
         mongodb-version: ${{ matrix.mongodb-version }}
 
     - run: npm ci
-    # cd client
-    # or move test to root directory and run
+
+    # testing rendering of the react application only
+    # add tests for interaction with database
     - run: npm test
